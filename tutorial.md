@@ -1,4 +1,6 @@
-## LLM tutorial on foundation time series models
+## LLM-related tutorials
+
+## Foundation time series models
 
 ## Background
 
