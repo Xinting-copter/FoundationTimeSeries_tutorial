@@ -14,7 +14,7 @@ Before you begin, ensure you have the following tools installed:
 - Python 3.8+
 - Libraries: `pandas`, `numpy`, `matplotlib`, `scikit-learn`
 
-You can install these dependencies by running:
+Install these dependencies by running:
 
 ```bash
 pip install pandas numpy matplotlib scikit-learn
@@ -35,18 +35,15 @@ If it’s available through pip, install it directly:
 pip install foundation-ts-model
 ```
 
-### 2. Preparing Your Dataset
+### 2. Preparing Dataset
 
-Foundation works with time series data, so you must prepare your dataset in a format suitable for time series analysis. Typically, this means a DataFrame where:
+Typically, this means a DataFrame where:
 - The index is a `DatetimeIndex`
 - Columns represent different variables or features of the time series.
-
-For example, if you are working with stock prices:
-```python
-import pandas as pd
+- 
 
 # Load your data (make sure the Date column is parsed as a datetime object)
-df = pd.read_csv('stock_prices.csv', parse_dates=['Date'], index_col='Date')
+df = pd.read_csv('sada.csv', parse_dates=['Date'], index_col='Date')
 
 # Display the first few rows
 print(df.head())
@@ -70,7 +67,7 @@ from foundation_ts_model import FoundationModel
 
 # Define model parameters
 forecast_horizon = 10  # Predict 10 time steps into the future
-lookback_window = 30   # Use the last 30 time steps for prediction
+lookback_window  = 30   # Use the last 30 time steps for prediction
 
 # Instantiate the Foundation model
 model = FoundationModel(forecast_horizon=forecast_horizon, lookback_window=lookback_window)
