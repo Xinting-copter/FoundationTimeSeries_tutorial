@@ -88,9 +88,9 @@ train_size = int(len(df) * 0.8)  # 80% training, 20% test
 train, test = df[:train_size], df[train_size:]
 ```
 
-### 5. Training the Model
+### 5. Test the Model
 
-Fit the Foundation model on the training data.
+Test the Foundation model on the test data.
 
 ```python
 # Train the model
@@ -102,7 +102,7 @@ You can also print the training performance or visualize the loss history if the
 model.plot_training_loss()  # If supported
 ```
 
-### 6. Making Predictions
+### 6. Fine-tuning 
 
 Once the model is trained, you can make predictions for the forecast horizon.
 
