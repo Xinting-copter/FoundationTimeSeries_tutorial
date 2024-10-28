@@ -6,7 +6,7 @@ Creating a tutorial for using the Foundation time series model involves explaini
 
 This tutorial will guide you through installing, configuring, and applying the Foundation time series model for forecasting time series data.
 
-![SADA system](path_to_image/close_price_plot.png)
+![SADA system](path_to_image/.png)
 *Figure 1: Stock Close Price Over Time*
 
 ### Prerequisites
