@@ -12,7 +12,7 @@ This tutorial will guide you through installing, configuring, and applying the F
 ### Prerequisites
 Before you begin, ensure you have the following tools installed:
 - Python 3.8+
-- Libraries: `pandas`, `numpy`, `matplotlib`, `scikit-learn`
+- Libraries: `pandas`, `numpy`, `matplotlib`, `scikit-learn`, details can be found in the requirements.txt.
 
 Install these dependencies by running:
 
