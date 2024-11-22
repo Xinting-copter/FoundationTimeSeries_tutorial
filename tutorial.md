@@ -47,7 +47,7 @@ Typically, prepare a DataFrame where:
 
 ### Load your data (make sure the Date column is parsed as a datetime object)
 ```
-df = pd.read_csv('sada.csv', index_col='ds', parse_dates=True)
+df = pd.read_csv('sada.csv', index_col='ds', parse_dates=True) ### features has been normalized
 ```
 
 ### Display the first few rows
@@ -199,11 +199,9 @@ print(f'Root Mean Squared Error: {rmse}')
 Finally, plot the actual vs. predicted and resiudals values to visualize the model's performance.
 
 ```python
-import matplotlib.pyplot as plt
-
 plt.rcParams.update({'font.size': 16})
 
-########## plot the confidential results
+### plot the prediction intervals
 fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(25, 10))
 for i, ax, name in zip(np.arange(6), axes.flatten(), ['s_current', 's_shell', 's_shaft', 'n_current', 'n_shell', 'n_shaft']):
     plot_single(
@@ -224,43 +222,39 @@ for i, ax, name in zip(np.arange(6), axes.flatten(), ['s_current', 's_shell', 's
     new_labels = [label.get_text().replace('2019-', '') for label in xticklabels]
     ax.set_xticklabels(new_labels)
 
-############ plot the 
+### plot the exact prediction
+pred = forecast_day.quantile(0.5).transpose()
+gt   = label_day['target']
 
+fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(25, 10))
+for i, ax, name in zip(np.arange(6), axes.flatten(), ['s_current', 's_shell', 's_shaft', 'n_current', 'n_shell', 'n_shaft']):
+    ax.plot(gt[i,:], c='b', label='gt')
+    ax.plot(pred[i,:], c='r', label='pred')
+    xticklabels = ax.get_xticklabels()
+    new_labels = [label.get_text().replace('2019-', '') for label in xticklabels]
+    ax.set_xticklabels(new_labels)
+    ax.set_title(name)
 
-############ plot the residuals
+### plot the residual
+fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(25, 10))
+for i, ax, name in zip(np.arange(6), axes.flatten(), ['s_current', 's_shell', 's_shaft', 'n_current', 'n_shell', 'n_shaft']):
+    ax.plot(gt[i,:] - pred[i,:], c='k', label='gt-pred')
+    ax.set_title(name)
 ```
 
-### 9. Advanced Features
+### 9. Fine-tuning
 
-Foundation offers several advanced features:
-- **Multivariate Forecasting**: Include multiple variables (e.g., Open, High, Low) for better prediction.
-- **Seasonality Adjustments**: Handle seasonality by adding explicit seasonal components.
-- **Auto-tuning**: Automatically find the best model parameters.
-
-Refer to the official documentation for more advanced configurations and options.
+To be continued...
 
 ### Conclusion
 
-This tutorial has introduced you to the basics of using the Foundation time series model. With your model trained and evaluated, you can apply it to various time series forecasting tasks, from stock prices to demand forecasting.
+This tutorial has introduced you to the basics of using the Foundation time series model. With your model trained and evaluated, you can apply it to various time series forecasting tasks.
 
 For further reading, consult the [official documentation](https://github.com/SalesforceAIResearch/uni2ts/tree/main).
 
 ### Reference
 
 ```bash
-@article{liu2024moiraimoe,
-  title={Moirai-MoE: Empowering Time Series Foundation Models with Sparse Mixture of Experts},
-  author={Liu, Xu and Liu, Juncheng and Woo, Gerald and Aksu, Taha and Liang, Yuxuan and Zimmermann, Roger and Liu, Chenghao and Savarese, Silvio and Xiong, Caiming and Sahoo, Doyen},
-  journal={arXiv preprint arXiv:2410.10469},
-  year={2024}
-}
-
-@article{aksu2024gifteval,
-  title={GIFT-Eval: A Benchmark For General Time Series Forecasting Model Evaluation},
-  author={Aksu, Taha and Woo, Gerald and Liu, Juncheng and Liu, Xu and Liu, Chenghao and Savarese, Silvio and Xiong, Caiming and Sahoo, Doyen},
-  journal={arXiv preprint arXiv:2410.10393},
-  year={2024}
-}
 
 @inproceedings{woo2024moirai,
   title={Unified Training of Universal Time Series Forecasting Transformers},
