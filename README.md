@@ -2,7 +2,7 @@
 
 ### Run model
 
-Make sure meet all the prerequisites.
+Make sure to meet the prerequisites.
 
 [tutorial_code](tutorial.ipynb)
 
