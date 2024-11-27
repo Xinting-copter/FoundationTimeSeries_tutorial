@@ -21,7 +21,7 @@ pip install pandas numpy matplotlib scikit-learn
 
 ### 1. Installing Foundation Time Series Model
 
-First, you need to install the Foundation models. Here we utilize the ['Moiriai'](https://arxiv.org/abs/2402.02592) as the implemented focus and clone its repository from the model's official GitHub repository:
+First, you need to install the Foundation models. Here we utilize the ['Moirai'](https://arxiv.org/abs/2402.02592) as the implemented focus and clone its repository from the model's official GitHub repository:
 
 ```bash
 git clone https://github.com/SalesforceAIResearch/uni2ts.git
