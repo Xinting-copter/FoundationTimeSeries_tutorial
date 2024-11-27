@@ -244,7 +244,13 @@ for i, ax, name in zip(np.arange(6), axes.flatten(), ['s_current', 's_shell', 's
 
 ### 9. Fine-tuning
 
-To be continued...
+There are three kinds of common fine-tuning techniques, i.e., partially, last-layer, and fully fine-tuning. 
+
+```python
+
+
+
+```
 
 ### Conclusion
 
