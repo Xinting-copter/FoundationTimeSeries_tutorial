@@ -9,5 +9,9 @@ Make sure to meet the prerequisites.
 
 ### Step-by-step guide
 
-
+#### inference
 [tutorial_guide](tutorial.md)
+
+
+#### fine-tuning
+[tutorial_guide_finetune](tutorial.md)
