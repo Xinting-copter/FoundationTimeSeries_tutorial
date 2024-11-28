@@ -57,7 +57,7 @@ print(df.head())
 
 SADA data should look like this:
 ```
-	IN17	TK36	TK38	IN7	TK37	TK39
+	South current	South Shell Temp        South Shaft Temp North current	North Shell Temp North Shaft Temp
 ds						
 2019-02-03 00:00:00	42.176	32.722000	39.529000	39.640	11.322	-11.234
 2019-02-03 00:01:00	42.176	32.722000	39.529000	39.640	11.322	-11.234
